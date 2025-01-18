@@ -21,6 +21,20 @@ const InstructorSchema = new mongoose.Schema<TInstructor>({
     type: String,
     enum: Object.values(TRole),
   },
+  achievements: {
+    type: [String],
+    required: true,
+  },
+  experience_years: {
+    type: Number,
+  },
+  qualification: {
+    type: String,
+  },
+  rating: { type: Number },
+  specialization: {
+    type: String,
+  },
 });
 
 export const Instructor = mongoose.model<TInstructor>(

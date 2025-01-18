@@ -4,11 +4,16 @@ export interface TInstructor {
   email: string;
   number_of_class_taken: number;
   role: TRole;
+  specialization: string;
+  experience_years: number;
+  qualification: string;
+  achievements: [string];
+  rating: number;
 }
 
 export const TRole = {
   ADMIN: 'ADMIN',
-  USER: 'USER',
+  STUDENT: 'STUDENT',
   INSTRUCTOR: 'INSTRUCTOR',
 };
 
