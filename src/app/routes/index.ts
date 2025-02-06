@@ -1,16 +1,12 @@
 import { Router } from 'express';
-import { EventRoutes } from '../modules/Event/event.route';
 import { AuthRouter } from '../modules/Auth/auth.route';
 import { sportsClassRoutes } from '../modules/SportsClasses/sportsClass.routes';
 import { instructorRoutes } from '../modules/Instructors/instructors.routes';
+import { cartRoutes } from '../modules/Carts/cart.routes';
 
 const router = Router();
 
 const moduleRoutes = [
-  {
-    path: '/events',
-    route: EventRoutes,
-  },
   {
     path: '/auth',
     route: AuthRouter,
@@ -22,6 +18,10 @@ const moduleRoutes = [
   {
     path: '/instructor',
     route: instructorRoutes,
+  },
+  {
+    path: '/cart',
+    route: cartRoutes,
   },
 ];
 

@@ -3,6 +3,7 @@ import jwt, { JwtPayload } from 'jsonwebtoken';
 import config from '../config';
 import { User } from '../modules/User/user.model';
 import catchAsync from '../utils/catchAsync';
+import { TRole } from '../modules/Instructors/instructors.interface';
 
 const auth = () => {
   return catchAsync(async (req: Request, res: Response, next: NextFunction) => {
@@ -29,6 +30,10 @@ const auth = () => {
     }
 
     req.user = decoded as JwtPayload;
+
+    // if (roles.length && !roles.includes(verifiedUser?.role)) {
+    //   throw new AppError(httpStatus.FORBIDDEN, "FORBIDDEN!");
+    // }
 
     next();
   });
